@@ -1,0 +1,211 @@
+/* shopping_lists.css */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+.content-wrapper {
+    margin-left: 260px;
+    min-height: 100vh;
+    background: #f5efe6;
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+    color: #34554a;
+}
+
+.content-wrapper h1 {
+    font-family: 'Cormorant Garamond', serif;
+    color: #34554a;
+    margin-bottom: 10px;
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.shopping-list-card {
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin-bottom: 20px;
+    border-left: 4px solid #F29E52;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+    height: 100%;
+    border: 1px solid rgba(232, 168, 124, 0.1);
+}
+
+.shopping-list-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.shopping-list-card .card-body {
+    padding: 1.5rem;
+}
+
+.shopping-list-card .card-title {
+    color: #34554a;
+    margin: 0 0 10px 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1.4;
+    position: relative;
+    padding-bottom: 8px;
+}
+
+.shopping-list-card .card-title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 2px;
+    background-color: #F29E52;
+}
+
+.progress {
+    height: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: rgba(168, 181, 69, 0.2);
+}
+
+.progress-bar {
+    background-color: #F29E52;
+    border-radius: 5px;
+}
+
+.btn-primary {
+    background-color: #34554a;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 12px rgba(52, 85, 74, 0.2);
+}
+
+.btn-primary:hover {
+    background-color: #2a4a40;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(52, 85, 74, 0.3);
+}
+
+.create-list-card {
+    min-height: 200px;
+    border: 2px dashed #ccc;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: border-color 0.3s, background-color 0.3s;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.create-list-card:hover {
+    border-color: #F29E52;
+    background-color: #f9f9f9;
+}
+
+.create-list-icon {
+    font-size: 48px;
+    color: #F29E52;
+    margin-bottom: 10px;
+}
+
+.modal-content {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.modal-header {
+    background-color: #34554a;
+    color: white;
+    padding: 15px 20px;
+    border-bottom: none;
+}
+
+.modal-header .btn-close {
+    color: white;
+    opacity: 0.8;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.modal-footer {
+    border-top: none;
+    padding: 15px 20px;
+}
+
+.modal-footer .btn-secondary {
+    background-color: #6c757d;
+    border: none;
+}
+
+.modal-footer .btn-primary {
+    background-color: #34554a;
+    border: none;
+}
+
+.form-control {
+    padding: 12px 15px;
+    border: 1px solid rgba(52, 85, 74, 0.2);
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s;
+    color: #34554a;
+    font-family: 'Poppins', sans-serif;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #F29E52;
+    box-shadow: 0 0 0 3px rgba(242, 158, 82, 0.2);
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    .content-wrapper {
+        margin-left: 0;
+        padding: 10px;
+    }
+    
+    .shopping-list-card .card-body {
+        padding: 1.2rem;
+    }
+    
+    .create-list-card {
+        min-height: 180px;
+    }
+    
+    .create-list-icon {
+        font-size: 42px;
+    }
+    
+    .modal-content {
+        margin: 0 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .create-list-card {
+        min-height: 150px;
+    }
+    
+    .create-list-icon {
+        font-size: 36px;
+    }
+    
+    .shopping-list-card .card-title {
+        font-size: 1.2rem;
+    }
+    
+    .btn-primary {
+        width: 100%;
+    }
+}

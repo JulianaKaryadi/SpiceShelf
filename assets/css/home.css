@@ -1,0 +1,336 @@
+/* home.css - Trypophobia-friendly version */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5efe6;
+    background-image: 
+        linear-gradient(135deg, rgba(232, 168, 124, 0.03) 0%, rgba(52, 85, 74, 0.03) 100%);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: #34554a;
+}
+
+/* Main content */
+.main-content {
+    margin-left: 260px;
+    padding: 40px;
+    flex-grow: 1;
+    position: relative;
+}
+
+h1 {
+    font-family: 'Cormorant Garamond', serif;
+    color: #34554a;
+    margin-bottom: 25px;
+    font-size: 3rem;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 15px;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+h1::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 120px;
+    height: 3px;
+    background: linear-gradient(to right, #34554a, #e8a87c);
+    border-radius: 2px;
+}
+
+.main-content > p {
+    font-size: 1.15rem;
+    margin-bottom: 30px;
+    max-width: 800px;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Personalized greeting */
+.main-content > p:nth-of-type(2) {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #e8a87c;
+    margin-bottom: 40px;
+    padding-left: 20px;
+    border-left: 3px solid #e8a87c;
+    position: relative;
+}
+
+.recipe-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+}
+
+section {
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 15px;
+    padding: 35px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+    position: relative;
+    overflow: hidden;
+}
+
+section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(to right, #34554a, #e8a87c);
+}
+
+h2 {
+    font-family: 'Cormorant Garamond', serif;
+    color: #34554a;
+    margin-bottom: 30px;
+    font-size: 2.2rem;
+    position: relative;
+    display: inline-block;
+}
+
+h2::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #e8a87c;
+}
+
+/* Recipe cards */
+.recipe-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1400px;
+}
+
+.recipe-cards > p {
+    grid-column: 1 / -1;
+    color: #666;
+    font-style: italic;
+    text-align: center;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+    border: 1px dashed rgba(232, 168, 124, 0.3);
+}
+
+.recipe-card {
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: 1px solid rgba(232, 168, 124, 0.1);
+}
+
+.recipe-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.09);
+}
+
+.recipe-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: all 0.5s ease;
+    border-bottom: 3px solid #e8a87c;
+}
+
+.recipe-card:hover img {
+    filter: brightness(1.05);
+}
+
+.recipe-card-content {
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+}
+
+.recipe-card h3 {
+    color: #34554a;
+    margin: 0 0 15px 0;
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1.4;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.recipe-card h3::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 2px;
+    background-color: #e8a87c;
+}
+
+.recipe-card p {
+    color: #555;
+    margin: 0;
+    display: -webkit-box;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+/* Favorite button */
+.favorite-form {
+    margin-top: auto;
+    padding-top: 20px;
+}
+
+.favorite-btn {
+    width: 100%;
+    padding: 14px 20px;
+    border: none;
+    background-color: #34554a;
+    cursor: pointer;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.4s ease;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    font-size: 0.95rem;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.favorite-btn:hover {
+    background-color: #e8a87c;
+    box-shadow: 0 5px 15px rgba(232, 168, 124, 0.2);
+}
+
+/* Media Queries */
+@media screen and (max-width: 1200px) {
+    .recipe-cards {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 25px;
+    }
+    
+    h1 {
+        font-size: 2.6rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .main-content {
+        margin-left: 0;
+        padding: 30px 20px;
+        margin-top: 60px;
+    }
+    
+    .recipe-cards {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+    }
+    
+    section {
+        padding: 25px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+    
+    h2 {
+        font-size: 1.7rem;
+    }
+    
+    .recipe-card img {
+        height: 200px;
+    }
+    
+    .recipe-card-content {
+        padding: 20px;
+    }
+    
+    .recipe-card h3 {
+        font-size: 1.3rem;
+    }
+    
+    .recipe-sections {
+        gap: 40px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .main-content {
+        padding: 20px 15px;
+        margin-top: 70px;
+    }
+    
+    h1 {
+        font-size: 1.9rem;
+        padding-bottom: 10px;
+    }
+    
+    h1::before {
+        width: 80px;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    .recipe-sections {
+        gap: 30px;
+    }
+    
+    .recipe-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .recipe-card {
+        max-width: 100%;
+    }
+    
+    .recipe-card-content {
+        padding: 15px;
+    }
+    
+    .recipe-card h3 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+    
+    .favorite-btn {
+        padding: 12px 15px;
+    }
+    
+    section {
+        padding: 20px 15px;
+    }
+}

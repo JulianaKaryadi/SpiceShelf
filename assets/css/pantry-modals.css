@@ -1,0 +1,272 @@
+/* pantry-modals.css - Enhanced modal styling for recipe generation */
+
+/* Loading spinner */
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(232, 168, 124, 0.2);
+    border-left: 4px solid #e8a87c;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Enhanced modal content */
+.recipe-content {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.recipe-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.recipe-content::-webkit-scrollbar-track {
+    background: rgba(232, 168, 124, 0.1);
+    border-radius: 3px;
+}
+
+.recipe-content::-webkit-scrollbar-thumb {
+    background: rgba(232, 168, 124, 0.4);
+    border-radius: 3px;
+}
+
+.recipe-content::-webkit-scrollbar-thumb:hover {
+    background: rgba(232, 168, 124, 0.6);
+}
+
+/* Recipe badges container */
+.recipe-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+/* Meal type badge */
+.meal-type-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #34554a, #2a4a40);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    box-shadow: 0 3px 10px rgba(52, 85, 74, 0.2);
+}
+
+.meal-icon {
+    font-size: 1.2rem;
+}
+
+.meal-text {
+    text-transform: capitalize;
+}
+
+/* Selection info badge */
+.selection-info-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #e8a87c, #d89b6e);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    box-shadow: 0 3px 10px rgba(232, 168, 124, 0.2);
+}
+
+.selection-icon {
+    font-size: 1.2rem;
+}
+
+.selection-text {
+    text-transform: capitalize;
+}
+
+/* Prioritized ingredients section */
+.prioritized-ingredients {
+    background: rgba(232, 168, 124, 0.1);
+    border: 1px solid rgba(232, 168, 124, 0.3);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.prioritized-ingredients h3 {
+    color: #e8a87c;
+    margin: 0 0 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.prioritized-ingredients ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.prioritized-ingredients li {
+    margin: 5px 0;
+    color: #34554a;
+    font-weight: 500;
+}
+
+/* Enhanced modal buttons */
+.modal-footer .button.primary {
+    background: linear-gradient(135deg, #34554a, #2a4a40);
+    color: white;
+}
+
+.modal-footer .button.secondary {
+    background: rgba(232, 168, 124, 0.1);
+    color: #e8a87c;
+    border: 1px solid rgba(232, 168, 124, 0.3);
+}
+
+.modal-footer .button.secondary:hover {
+    background: rgba(232, 168, 124, 0.2);
+    border-color: #e8a87c;
+}
+
+/* Loading modal specific styling */
+.modal-body.text-center {
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.meal-type-indicator, .selection-mode-indicator {
+    background: rgba(232, 168, 124, 0.1);
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+    color: #34554a;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.selection-mode-indicator {
+    background: rgba(52, 85, 74, 0.1);
+    color: #34554a;
+}
+
+/* Error modal styling */
+.error-modal .modal-header {
+    background-color: #d35847;
+}
+
+.error-message {
+    color: #d35847;
+    font-weight: 500;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.expired-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Responsive modal adjustments */
+@media screen and (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        margin: 20px auto;
+    }
+    
+    .recipe-content {
+        max-height: 400px;
+    }
+    
+    .modal-footer {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .modal-footer .button {
+        width: 100%;
+    }
+    
+    .expired-actions {
+        flex-direction: column;
+    }
+    
+    .recipe-badges {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .meal-type-badge, .selection-info-badge {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .modal-content {
+        width: 98%;
+        margin: 10px auto;
+    }
+    
+    .modal-header h2 {
+        font-size: 1.3rem;
+    }
+    
+    .modal-body {
+        padding: 15px;
+    }
+    
+    .recipe-content {
+        max-height: 300px;
+        font-size: 0.95rem;
+    }
+    
+    .prioritized-ingredients {
+        padding: 12px;
+    }
+    
+    .prioritized-ingredients h3 {
+        font-size: 1rem;
+    }
+}
+
+/* Animation for modal appearance */
+.modal {
+    animation: modalBackdropFadeIn 0.3s ease;
+}
+
+@keyframes modalBackdropFadeIn {
+    from { 
+        opacity: 0; 
+    }
+    to { 
+        opacity: 1; 
+    }
+}
+
+/* Enhanced modal overlay */
+.modal {
+    backdrop-filter: blur(2px);
+}
+
+/* Focus styles for accessibility */
+.modal-footer .button:focus {
+    outline: 2px solid #e8a87c;
+    outline-offset: 2px;
+}
+
+.modal .close:focus {
+    outline: 2px solid rgba(255, 255, 255, 0.8);
+    outline-offset: 2px;
+    border-radius: 3px;
+}

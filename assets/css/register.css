@@ -1,0 +1,349 @@
+/* register.css */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Poppins:wght@300;400&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5efe6;
+    margin: 0;
+    padding: 0;
+    color: #34554a;
+}
+
+.background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.4;
+    filter: blur(40px);
+    animation: floatAnimation 12s ease-in-out infinite;
+}
+
+.shape1 {
+    width: 300px;
+    height: 300px;
+    background-color: #e8a87c;
+    top: 15%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.shape2 {
+    width: 250px;
+    height: 250px;
+    background-color: #34554a;
+    top: 65%;
+    right: 15%;
+    animation-delay: 2s;
+}
+
+.shape3 {
+    width: 220px;
+    height: 220px;
+    background-color: #d4c1a6;
+    top: 40%;
+    left: 30%;
+    animation-delay: 4s;
+    opacity: 0.3;
+}
+
+.shape4 {
+    width: 280px;
+    height: 280px;
+    background-color: #e8a87c;
+    bottom: 10%;
+    left: 40%;
+    animation-delay: 1s;
+    opacity: 0.2;
+}
+
+@keyframes floatAnimation {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    50% {
+        transform: translate(10px, 15px) rotate(5deg);
+    }
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.form-wrapper {
+    margin-left: 280px;
+    width: 100%;
+    max-width: 800px;
+    transition: all 0.3s ease;
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo img {
+    max-width: 100%;
+    max-height: 120px;
+    width: auto;
+    height: auto;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.registration-form {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.registration-form::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, #34554a, #e8a87c);
+}
+
+.registration-form h2 {
+    margin-bottom: 30px;
+    color: #34554a;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+    gap: 25px;
+}
+
+.form-group {
+    flex: 1;
+    min-width: 240px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #34554a;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid rgba(52, 85, 74, 0.2);
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s;
+    color: #34554a;
+    font-family: 'Poppins', sans-serif;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="password"]:focus {
+    outline: none;
+    border-color: #e8a87c;
+    box-shadow: 0 0 0 3px rgba(232, 168, 124, 0.2);
+}
+
+.checkbox-group {
+    max-height: 160px;
+    overflow-y: auto;
+    border: 1px solid rgba(52, 85, 74, 0.2);
+    padding: 15px;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.8);
+    scrollbar-width: thin;
+    scrollbar-color: #e8a87c rgba(245, 239, 230, 0.1);
+}
+
+.checkbox-group::-webkit-scrollbar {
+    width: 5px;
+}
+
+.checkbox-group::-webkit-scrollbar-track {
+    background: rgba(245, 239, 230, 0.1);
+}
+
+.checkbox-group::-webkit-scrollbar-thumb {
+    background: #e8a87c;
+    border-radius: 10px;
+}
+
+.checkbox-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-group label:last-child {
+    margin-bottom: 0;
+}
+
+.checkbox-group label input[type="checkbox"] {
+    margin-right: 10px;
+    cursor: pointer;
+    accent-color: #e8a87c;
+}
+
+button[type="submit"] {
+    background-color: #34554a;
+    color: #fff;
+    border: none;
+    padding: 14px 20px;
+    min-width: 200px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    transition: all 0.3s;
+    margin-top: 10px;
+    box-shadow: 0 4px 12px rgba(52, 85, 74, 0.2);
+    display: block;
+    margin: 0 auto;
+}
+
+button[type="submit"]:hover {
+    background-color: #2a4a40;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(52, 85, 74, 0.3);
+}
+
+button[type="submit"]:active {
+    transform: translateY(0);
+}
+
+.error-message {
+    color: #d35847;
+    margin: 15px 0;
+    padding: 10px;
+    background-color: rgba(211, 88, 71, 0.1);
+    border-radius: 4px;
+    text-align: center;
+    font-size: 14px;
+}
+
+@media screen and (max-width: 1024px) {
+    .form-wrapper {
+        margin-left: 0;
+        margin: 0 auto;
+        padding: 20px 0;
+    }
+    
+    .container {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        padding-top: 90px;
+        align-items: flex-start;
+    }
+    
+    .registration-form {
+        padding: 30px 25px;
+    }
+    
+    .registration-form h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .form-group {
+        margin-right: 0;
+        min-width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .registration-form {
+        padding: 25px 20px;
+    }
+    
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="password"] {
+        padding: 10px 12px;
+    }
+    
+    button[type="submit"] {
+        width: 100%;
+        padding: 12px 15px;
+    }
+    
+    .shape {
+        opacity: 0.25;
+    }
+    
+    .logo img {
+        max-height: 90px;
+    }
+    
+    .checkbox-group {
+        max-height: 140px;
+    }
+}
+
+/* For smaller height screens */
+@media screen and (max-height: 800px) {
+    .container {
+        padding-top: 70px;
+        padding-bottom: 20px;
+        min-height: 100vh;
+        align-items: flex-start;
+    }
+    
+    .form-group {
+        margin-bottom: 15px;
+    }
+    
+    .registration-form h2 {
+        margin-bottom: 20px;
+    }
+    
+    .checkbox-group {
+        max-height: 120px;
+    }
+}
